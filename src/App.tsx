@@ -24,7 +24,7 @@ function App() {
             target="_blank"
             rel="noopener noreferrer"
         >
-          Check Github
+          Check my Github
         </a></Button>
         
       </header>
