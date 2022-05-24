@@ -20,7 +20,7 @@ function App() {
         <Button onClick={handleShowAlert}>Show alert</Button>
         <Button variant="contained"><a
             className="App-link"
-            href="https://github.com/Hurado/react-app-daftac"
+            href="https://github.com/Hurado/react-app-daftac2"
             target="_blank"
             rel="noopener noreferrer"
         >
