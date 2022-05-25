@@ -1,5 +1,9 @@
 {
     "cSpell.words": [
+        "logodiet",
         "tenta"
+    ],
+    "conventionalCommits.scopes": [
+        "navigation"
     ]
 }

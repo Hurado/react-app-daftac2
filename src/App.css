@@ -1,5 +1,23 @@
-.App {
+.Things {
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  background-color: #282c34;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  min-height: 50vh;
+  align-items: center;
+}
+.App{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  background-color: #282c34;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  min-height: 50vh;
+  align-self:center;
+  align-items: center;
 }
 
 .App-logo {
@@ -15,7 +33,7 @@ color: red
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    /* animation: App-logo-spin infinite 20s linear; */
   }
 }
 
@@ -23,15 +41,18 @@ color: red
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  align-items: flex-start;
+  align-content: center;  
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  /* font-size: calc(10px + 2vmin); */
+  font-size: 30px;
   color: white;
 }
 
 .App-link {
   color: #61dafb;
+  padding: 10px 20px;
 }
 
 @keyframes App-logo-spin {

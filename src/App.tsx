@@ -1,33 +1,42 @@
-import { InputForm } from './InputForm';
-import Button from '@mui/material/Button'
-import React, {useState} from 'react';
-import tenta from './tenta.gif';
-import './App.css';
+import { InputForm } from "./InputForm";
+import React from "react";
+import  { ContactsPage } from './ContactsPage'
+import "./App.css";
+import { Routes, Route, Link } from "react-router-dom";
+import { NewsPage } from "./NewsPage";
+import logo from "./images/logodiet.jpg";
+
+
+export const routesPaths = {
+  about: "about",
+  form: "form",
+  contacts: "contacts",
+  news: "news"
+}
 
 function App() {
-  const [count,setCount] = useState<number>(0)
-  const handleShowAlert = () => {
-    alert("Hello ReactJS")
-    setCount(count+1)
-  }
   return (
     <div className="App">
-      <header className="App-header">
-      <InputForm defaultValue={'Start typing'}/>
-        <img src={tenta} className="App-logo" alt="logo" />
-       
-        <div>{`Alert was shown: ${count} times`}</div>
-        <Button onClick={handleShowAlert}>Show alert</Button>
-        <Button variant="contained"><a
-            className="App-link"
-            href="https://github.com/Hurado/react-app-daftac2"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-          Check Github
-        </a></Button>
-        
-      </header>
+      <div className="App-header">
+        <div>
+          <img src={logo} className='App-logo' alt="logo-diet" />
+        </div>
+        <div>
+          <Link className="App-link" to={"/"}>Home</Link>
+          <Link className="App-link" to={`/${routesPaths.about}`}>About</Link>
+          <Link className="App-link" to={'/news'}>News</Link>
+          <Link className="App-link" to={`/${routesPaths.form}`}>Form</Link>
+          <Link className="App-link" to={`/${routesPaths.contacts}`}>Contact</Link> 
+        </div>
+      </div>
+      <Routes>
+        <Route path="/" element={<div>Home</div>}/>
+        <Route path='*' element={<div>404</div>}/>
+        <Route path='/about' element={<div>About</div>}/>
+        <Route path={`/${routesPaths.news}`} element={<NewsPage/>}/>
+        <Route path={`/${routesPaths.form}`} element={<InputForm defaultValue={'hello form'}/>}/>
+        <Route path={`/${routesPaths.contacts}`} element={<div>Contacts</div>}/>
+      </Routes>
     </div>
   );
 }
